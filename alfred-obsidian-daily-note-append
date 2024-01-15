@@ -1,0 +1,16 @@
+# Script that can be used in Alfred workflow to append text to daily note
+
+# Your Obsidian vault's directory
+OBSIDIAN_VAULT_PATH="/Users/slonoed/BLABLA/notes"
+
+# Format the current date as YYYY-MM-DD
+DATE=$(date "+%Y-%m-%d")
+
+# The file path with the formatted date
+FILENAME="$OBSIDIAN_VAULT_PATH/$DATE.md"
+
+# The text to append, passed from the Alfred query
+TEXT_TO_APPEND="- $1"
+
+# Append the text to the file
+echo "$TEXT_TO_APPEND" >> "$FILENAME"
